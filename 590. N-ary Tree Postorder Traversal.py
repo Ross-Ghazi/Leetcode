@@ -1,3 +1,5 @@
+#see  below link for  data structure
+# https://www.geeksforgeeks.org/inorder-traversal-of-an-n-ary-tree/?ref=lbp
 class Node():
 
     def __init__(self, val):

@@ -50,11 +50,21 @@ class Solution:
             else:
                 return [dic[target-num]+1, i+1]
 
-
+  # Hashtable/dic
+    def twoSum3(self, numbers, target):
+        dic={}
+        for i,num in enumerate(numbers):
+            comp=target-num
+            if num  not in dic:
+                dic[comp]=i
+            else:
+                return [i+1, dic[comp]+1]
 
 
 a=Solution()
-output=a.twoSum1([2,7,11,15],18)
+output=a.twoSum1([2,7,11,15],9)
 print(output)
-output=a.twoSum2([2,7,11,15],18)
+output=a.twoSum2([2,7,11,15],9)
+print(output)
+output=a.twoSum3([2,7,11,15],9)
 print(output)
