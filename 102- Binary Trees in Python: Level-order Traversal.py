@@ -1,0 +1,101 @@
+""""
+Dec 6,2020
+Rouzbeh
+Level order traversal binary tree. I got the file from below refernces, removed the queue class but applied the same
+idea of queue. b/asically changed Luic code  to match with Deepti
+
+The easier way is the alternative way from leetcode comments.
+
+all of them are only in fater  than only 6% of other solutions.
+
+https://github.com/vprusso/youtube_tutorials/blob/master/data_structures/trees/binary_trees/level_order_traversal.py
+https://www.youtube.com/watch?v=aM-oswPn19o&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=35&ab_channel=LucidProgramming
+
+https://www.youtube.com/watch?v=MBZ-gBkjdMc&list=PL2b9acjRfGcm4qYq5MH9LufsJ67-BgkAI&index=4&ab_channel=DEEPTITALESRA
+
+
+https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/33464/5-6-lines-fast-python-solution-(48-ms)
+
+
+Alternative way to:
+https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/33464/5-6-lines-fast-python-solution-(48-ms)
+
+
+"""
+
+class Node(object):
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+
+    def levelOrder(self, root):
+        Q=[root]
+        NextQ=[]
+        level=[]
+        result=[]
+        if root==None: return []
+        while Q:
+            for node in Q:
+                level.append(node.val)
+                if node.left is not None:
+                  NextQ.append(node.left)
+                if node.right is not None:
+                  NextQ.append(node.right)
+            result.append(level)
+            Q=NextQ
+            NextQ=[]
+            level=[]
+
+        return result
+
+    def levelOrder_alter(self, root):
+            ans, level = [], [root]
+            while root and level:
+                ans.append([node.val for node in level])
+                level = [kid for node in level for kid in[node.left, node.right] if kid]
+            return ans
+
+    def levelOrderReverse(self, root):
+            ans, level = [], [root]
+            while root and level:
+                ans.append([node.val for node in level])
+                level = [kid for node in level for kid \
+                         in[node.left, node.right] if kid]
+            ans.reverse()
+            return ans
+
+
+"""
+
+                1
+              /    \
+            2       3
+          /  \     /  \
+          4   5   6    7
+
+
+
+"""
+node=Node(1)
+node.left = Node(2)
+node.right = Node(3)
+node.left.left = Node(4)
+node.left.right = Node(5)
+node.right.left= Node(6)
+node.right.right= Node(7)
+
+
+
+
+
+print(node.levelOrder(node))
+print(node.levelOrder_alter(node))
+print(node.levelOrderReverse(node))
+
+
+
+
+
+
