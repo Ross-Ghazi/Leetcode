@@ -21,7 +21,7 @@ class Node(object):
         if self.children==None:
             self.children=[]
         self.children.append(node)
-
+    #Recursively
     def preorder(self, root):
         res=[]
         def DFS(node):
@@ -33,6 +33,27 @@ class Node(object):
             for item in node.children:
                 DFS(item)
         DFS(root)
+        return res
+
+    #Iteratively
+    def preorder2(self, root):
+        if not root:return
+        res=[]
+        stack=[root]
+        while stack!=[]:
+            temp=stack.pop()
+            res.append(temp.val)
+            if temp.children:
+                for item in reversed(temp.children):
+                    stack.append(item)
+        return res
+
+
+
+
+
+
+
         return res
 
 """
@@ -55,6 +76,7 @@ child=Node(6)
 node.children[0].add_child(child)
 
 a=node.preorder(node)
+a=node.preorder2(node)
 print(a)
 
 
