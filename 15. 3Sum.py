@@ -6,6 +6,7 @@ Dec 10, 2020
 https://www.youtube.com/watch?v=erEHQO0xljc
 
 you can not delete the duplicates of nums because them for example [0,0,0] will be zero.
+you cannot break because it does not work for exampel for [[0,0,0,0,0,0]
 
 """
 
