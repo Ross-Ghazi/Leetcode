@@ -36,6 +36,8 @@ class Solution:
         return _climbStairs3(n)
 
     # buttom up, iterative
+    # same ideas as:
+    #https://www.youtube.com/watch?v=FwmOwHR1x2k&ab_channel=RickyCho
     def climbStairs4(self, n: int) -> int:
         if n==1: return 1
         if n==2: return 2
