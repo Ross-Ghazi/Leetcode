@@ -1,24 +1,18 @@
 """"
-Dec 6,2020
+update on June 21, 2021
 Rouzbeh
-Level order traversal binary tree. I got the file from below refernces, removed the queue class but applied the same
-idea of queue. b/asically changed Luic code  to match with Deepti
 
-The easier way is the alternative way from leetcode comments.
-
-all of them are only in fater  than only 6% of other solutions.
-
-https://github.com/vprusso/youtube_tutorials/blob/master/data_structures/trees/binary_trees/level_order_traversal.py
-https://www.youtube.com/watch?v=aM-oswPn19o&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=35&ab_channel=LucidProgramming
-
+1. The fiest way is from below link with explanining the detail
 https://www.youtube.com/watch?v=MBZ-gBkjdMc&list=PL2b9acjRfGcm4qYq5MH9LufsJ67-BgkAI&index=4&ab_channel=DEEPTITALESRA
 
 
+2. Alternative way which uses list comprehension and it is better but harder to understand:
 https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/33464/5-6-lines-fast-python-solution-(48-ms)
 
 
-Alternative way to:
-https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/33464/5-6-lines-fast-python-solution-(48-ms)
+3. If you want more info about how to make binary tree
+https://github.com/vprusso/youtube_tutorials/blob/master/data_structures/trees/binary_trees/level_order_traversal.py
+https://www.youtube.com/watch?v=aM-oswPn19o&list=PL5tcWHG-UPH112e7AN7C-fwDVPVrt0wpV&index=35&ab_channel=LucidProgramming
 
 
 """
