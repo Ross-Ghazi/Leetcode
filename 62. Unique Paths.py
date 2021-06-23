@@ -5,7 +5,8 @@
 # Assume m=4 n=3==> we should have m-1 (3) rights and n-1 (3) down in our list. if we had different type of
 # rigth and down the result was (m-1+n-1)!
 # but they are the same type as "tarkib" so it should be divided by (m-1)! and (n-1)!
-
+# refer to problem 3.1 mathematics of choice or how to count without counting pdf:
+# https://mathsmartinthomas.files.wordpress.com/2018/08/niven-maths-of-choice.pdf
 from time import time
 from functools import lru_cache
 def uniquePaths(m, n):
