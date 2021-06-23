@@ -3,8 +3,10 @@
 #By Rouzbeh
 # https://www.youtube.com/watch?v=kqQnhBljXok&ab_channel=RickyCho
 # https://www.youtube.com/watch?v=wnkZKar0UiM&ab_channel=GiuseppePicciano
-#lower link put currentsom=0 rather than -inifnity  which is wrong because if all integers are negative
-#it will not work. Solution:
+# https://www.youtube.com/watch?v=86CQq3pKSUw&ab_channel=CSDojo
+#the seond link put currentsom=0 rather than -inifnity  which is wrong because if all integers are negative
+#it will not work.
+#Solution:
 # if curretsum<0 is same as max(currentsum, currentsum+num)
 
 def maxSubArray(nums):
