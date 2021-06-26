@@ -35,6 +35,22 @@ def isAnagram3( s: str, t: str) -> bool:
         return True
     else:
         return False
+   
+def isAnagram4(self, s: str, t: str) -> bool:
+        l=len(s)
+        if len(s) != len(t):
+            return False        
+        
+        map=collections.defaultdict(int)
+        
+        for i in range(l):
+            map[s[i]]+=1
+            map[t[i]]-=1
+        for key,val in map.items():
+            if val !=0:
+                return False
+        return True
+            
 
 
 
