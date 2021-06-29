@@ -1,4 +1,4 @@
-#site was done ton check later
+#site was done did not finish
 class Solution:
     def romanToInt(self, s: str) -> int:
         res=0
@@ -26,7 +26,7 @@ class Solution:
                 res+=100              
             else :
                 break    
-
+        #more than 50,10,5,...
 
         return res
 
