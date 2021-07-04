@@ -1,34 +1,23 @@
-def dfs(grid,i,j):
-    if  i<0 or i>=len(grid) or j<0 or j>=len(grid[0]):
-        return
-    if grid[i][j]=="0" or grid[i][j]=="2":
-         return
-
-
-    grid[i][j]="2"
-    dfs(grid, i+1, j)
-    dfs(grid, i-1, j)
-    dfs(grid, i  , j+1)
-    dfs(grid, i  , j-1)
-
-grid = [
-  ["1","1","0","0","0"],
-  ["1","1","0","0","0"],
-  ["0","0","1","0","0"],
-  ["0","0","0","1","1"]
-]
-
-
-n=0
-jmax=len(grid[0]) #Horizontal
-imax=len(grid)    #Vertical
-
-
-
-for i in range(0,imax):
-    for j in range(0,jmax):
-        if grid[i][j]=="1":
-            n+=1
-            dfs(grid,i,j)
-
-print(n)
+class Solution(object):
+    def numIslands(self, grid):
+        row=len(grid)
+        col=len(grid[0])
+        count=0
+        def search(r,c):
+            if r<0 or c<0 or c>=col or r>=row:
+                return
+            
+            if grid[r][c]!="1":
+                return                       
+            grid[r][c]="2"
+            search(r+1,c)
+            search(r-1,c)
+            search(r,c+1)
+            search(r,c-1)                        
+            
+        for r in range(row):
+            for c in range(col):
+                if grid[r][c]=="1":                  
+                        search(r,c)
+                        count+=1
+        return count
