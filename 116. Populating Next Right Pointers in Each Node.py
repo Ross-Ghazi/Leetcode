@@ -1,4 +1,5 @@
-
+# no refernce was used
+# the idea is same as level order traverse 
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if root is None:
