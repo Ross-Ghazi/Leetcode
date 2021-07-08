@@ -1,0 +1,52 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+# no referece was used
+#1. traverse go to start from left
+#2. reverse left to right
+#3. connect first part and reverse part
+#4. connect if any remanining
+# I noticed if left=1, there is a edge case that will cause problem
+# so as per following link I added dummy node before start and added 1 to left and right
+# https://leetcode.com/problems/reverse-linked-list-ii/discuss/30709/Talk-is-cheap-show-me-the-code-(and-DRAWING)
+
+class Solution:
+    def reverseBetween(self, head: ListNode, left: int, right: int) -> ListNode:
+        if left==right:
+            return head
+        if head.next==None:
+            return head
+        
+        head1=ListNode()
+        head1.next=head
+        cur=head1
+        bs=head1
+        left+=1
+        right+=1
+        for i in range(1, left):           
+                prev=cur #before start 
+                cur=cur.next
+        beforeStart=prev
+        start=cur        
+        prev=None
+        
+        for i in range(right-left+1):
+            temp=cur.next
+            cur.next=prev
+            prev=cur
+            cur=temp 
+        end=start
+        start=prev
+        beforeStart.next=start
+        if cur !=None:
+            end.next=cur 
+        
+        return head1.next
+                    
+                    
+                    
+            
+        
