@@ -1,0 +1,37 @@
+# my own solution but here is the link for another method:
+#  https://www.youtube.com/watch?v=qkLl7nAwDPo&ab_channel=NeetCode
+class MinStack:
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.res=[]
+        
+
+    def push(self, val: int) -> None:
+        if len (self.res) ==0:
+            self.res.append([val,val])
+        else:
+            temp1,temp2=self.res[-1]
+            mini=min(temp1, temp2)
+            self.res.append([val,mini])
+        
+                   
+        
+            
+
+    def pop(self) -> None:
+        temp1,temp2=self.res.pop()
+        return temp1  
+        
+
+    def top(self) -> int:
+        temp1,temp2=self.res[-1]
+        return temp1
+
+    def getMin(self) -> int:
+        temp1,temp2=self.res[-1]
+        
+        return min(temp1,temp2)
+        
