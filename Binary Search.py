@@ -12,6 +12,7 @@ def RBinSearch(l,r):
     if target==A[mid]:
         return mid    
     if target<A[mid]:
+        # don not forget to have return
         return RBinSearch(l,mid-1)
     else:
         return RBinSearch(mid+1,r)
