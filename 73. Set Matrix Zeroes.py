@@ -1,5 +1,7 @@
 
 # no refernce
+# the idea is loop through the matrix if you see zero make all of  items in same col or raw to "" (other than other zeros)
+# thenm change all "" to zeros. similat to leetoce 289
 # for zero function: I had initally looping through the whole matrix but there is no need to do that
 # we can loop through only the col and row that we are intersted
 # Also fir zero function first I was not had "if matrix[r0][c] !=0" which cause some bugs as it will change zeros to "" and then you will not change its col or rows as it is not 0 anymore
