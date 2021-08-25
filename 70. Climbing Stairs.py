@@ -48,6 +48,21 @@ class Solution:
             case[i]=case[i-1]+case[i-2]
         return case[n-1]
 
+    # buttom up, iterative
+    # same ideas as above but handle 0:
+    #https://www.youtube.com/watch?v=FwmOwHR1x2k&ab_channel=RickyCho
+    def climbStairs5(self, n: int) -> int:
+       if n==1:
+            return 1
+        if n==2:
+            return 2
+        num=[0]*(n+1)
+        num[1]=1
+        num[2]=2
+        
+        for i in range(3,len(num)):
+            num[i]=num[i-1]+num[i-2]
+        return num[-1] 
 
 
 
