@@ -33,24 +33,26 @@ class ListNode:
 
 
 
-    def addTwoNumbers(self, l1, l2):
-        res=ListNode()
-        temp=ListNode()
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        l3=ListNode()
+        head=l3
         carry=0
-        res=temp
-        while l1 or l2 or carry==1:
-            temp.next=ListNode(l1.val+l2.val+carry)
-            if temp.next.val>9:
-                carry=1
-                temp.next.val-=10
-            else:
+        while l1 or l2 or carry !=0:
+            num=carry
+            if l1:
+                num+=l1.val
+                l1=l1.next
+            if l2:
+                num+=l2.val
+                l2=l2.next
+            if num<10:
                 carry=0
-            l1=l1.next
-            l2=l2.next
-            temp=temp.next
-
-        return res.next
-
+            else:
+                carry=1
+                num-=10                
+            l3.next=ListNode(num)
+            l3=l3.next
+        return head.next
 
 
 
