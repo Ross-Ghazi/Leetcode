@@ -1,6 +1,5 @@
 #53. Maximum Subarray
 # Dec 11, 2020
-#By Rouzbeh
 # https://www.youtube.com/watch?v=kqQnhBljXok&ab_channel=RickyCho
 # https://www.youtube.com/watch?v=wnkZKar0UiM&ab_channel=GiuseppePicciano
 # https://www.youtube.com/watch?v=86CQq3pKSUw&ab_channel=CSDojo
