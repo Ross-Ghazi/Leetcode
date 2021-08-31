@@ -1,5 +1,5 @@
 """
-By Rouzbeh
+
 20. Valid Parentheses
 Dec 10, 2020
 No refernce  was used3
