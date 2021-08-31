@@ -1,6 +1,6 @@
 """"
 update on June 21, 2021
-Rouzbeh
+
 
 1. The fiest way is from below link with explanining the detail
 https://www.youtube.com/watch?v=MBZ-gBkjdMc&list=PL2b9acjRfGcm4qYq5MH9LufsJ67-BgkAI&index=4&ab_channel=DEEPTITALESRA
