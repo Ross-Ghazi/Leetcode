@@ -1,7 +1,7 @@
 #121. Best Time to Buy and Sell Stock
 
 # June 2021
-#By Rouzbeh
+
 #No refernce used. But here is on link, do what exactly what I did:
 # https://www.youtube.com/watch?v=I7KXD2OGDRQ&ab_channel=SaiAnishMalla
 # another methosd is two pointef:
