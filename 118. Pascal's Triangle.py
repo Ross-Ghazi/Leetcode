@@ -1,4 +1,4 @@
-"""By Rouzbeh
+
    2020-12-02
   pascall_Triangle
   https://leetcode.com/problems/pascals-triangle/
