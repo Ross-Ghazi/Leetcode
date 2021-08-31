@@ -1,5 +1,4 @@
 """
-By Rouzbeh on Dec 12, 2020
 3. Longest Substring Without Repeating Characters
 
 Saw the algorithm from the solution section , but the code is mine
