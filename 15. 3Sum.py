@@ -1,5 +1,5 @@
 """
-By Rouzbeh
+
 15. 3Sum
 Dec 10, 2020
 
