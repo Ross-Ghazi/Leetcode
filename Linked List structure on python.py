@@ -1,4 +1,4 @@
-# By Rouzbeh on Dec 12,2020
+
 # The list node is based on leetcode structure which does not
 # have any head.
 
