@@ -18,7 +18,6 @@ def maxProfit(prices):
             
             
 # Dec 11, 2020
-#By Rouzbeh
 #No refernce used. However to find max subarray I used this link before:
 # https://www.youtube.com/watch?v=kqQnhBljXok&t=5s&ab_channel=RickyCho
 
