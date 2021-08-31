@@ -1,5 +1,5 @@
 # 236. Lowest Common Ancestor of a Binary Tree
-#By Rouzbeh on Dec 11,2020
+
 # No source was used. IT is running fine on PC but for the same example it will give error on Leetcode.
 
 
