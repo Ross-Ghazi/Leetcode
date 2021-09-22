@@ -11,7 +11,7 @@ def DijkstraSinglepath (flights, src,des):
             adj[start].append((end,cost))     
         h=[] #heap (currentcost of currentvortex from start,currentvortex)
         heapq.heappush(h,(0,src))
-        path={}  # set can be used  like: visited=set() but to be similar to all path I used path
+        path={}  # set can be used  like: visited=set() but to be similar to all path I used path, we need it to not get into the loop.
         while len(h)!=0:
             currentcost,currentvortex=heapq.heappop(h)
             if currentvortex in path:
