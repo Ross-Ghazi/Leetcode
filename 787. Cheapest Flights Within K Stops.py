@@ -35,7 +35,11 @@ class Solution(object):
                         adjvor,adjcost=item
                         heapq.heappush(h,(adjcost+currentcost,adjvor,stopes+1))
         return -1
-                
+    
+    
+    
+    # another way to solve it is using modified Bellman Ford algorithim, which is kinf of BFS
+    # https://www.youtube.com/watch?v=5eIK3zUdYmE&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=23
    
 
         
