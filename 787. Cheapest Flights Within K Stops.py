@@ -1,7 +1,7 @@
 # There are different ways to solve it: Dijkstra, Bellman Ford, DFS, BFS
 
 # 1way is based on Dijkstra algorithm
-# Here is Dijkstra algorithm itself:  https://github.com/Rouzbeh1797/Leetcode/blob/main/Dijkstra%20algorithm%20to%20findshortest.py
+# Here is Dijkstra algorithm itself: https://github.com/Ross-Ghazi/Leetcode/blob/main/Dijkstra%20algorithm%20to%20findshortest.py
 # However, the main difference here, is that we can have only K stops
 # Here is one refernece on youtube which is wrong:
 #https://www.youtube.com/watch?v=IQOG3w4abAg&t=366s&ab_channel=KnowledgeCenter
