@@ -1,25 +1,41 @@
-# two ways:
-# https://www.youtube.com/watch?v=YPTqKIgVk-k&ab_channel=NeetCode
+# three methods: counter .most_common, heap and bucket sorting
 
 class Solution:
-    def topKFrequent(self, nums, k):
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        # # first Method, Counter and most_common
+        # col=Counter(nums).most_common(k)
+        # res=[]
+        # for number,kiri in col:
+        #     res.append(number)
+        # return res
+        
+        # # second  Method, heap
+        # freq=defaultdict(int)
+        # for n in nums:
+        #     freq[n]+=1
+        # res=[]
+        # for n,fr in freq.items():
+        #     if len(res)<k:
+        #         heapq.heappush(res, (fr,n))
+        #     else:
+        #         heapq.heappushpop(res, (fr,n))     
+        # return [n for fr,n in res]
+        
+        
+        # # Third  Method, Bucket sorting
+        freq=defaultdict(int)
+        for n in nums:
+            freq[n]+=1
+        bucket=[[] for _ in range(len(nums)+1)]                      
+        for num,fre in freq.items():
+            bucket[fre].append(num)
         res=[]
-        Count = Counter(nums)                  
-        # bucket=[[]]*(len(nums)+1)  # wrong 
-        bucket=[[] for _ in range(len(nums)+1)]        
-        for n,freq in Count.items():          
-            bucket[freq]+=[n]         
-        for i in range(len(bucket)-1,-1,-1):
-            if bucket !=[]:
-                res+=bucket[i]
-                if len (res)>=k:
-                    return res
-                  
-   # second way
-    def topKFrequent2(self, nums, k):
-        res=[]
-        Count = Counter(nums)  
-        Count1 = Counter(nums).most_common(k)        
-        for item in Count1:
-            res.append(item[0])       
-        return res          
+        while len(res)<k and bucket!=[]:
+            numlist=bucket.pop()            
+            if numlist:
+                for item in numlist:
+                    res.append(item)
+        return res
+        
+        
+        
