@@ -37,9 +37,22 @@ class Solution(object):
         return -1
     
     
-    
+    #------------------------------------------------------------------------------
     # another way to solve it is using modified Bellman Ford algorithim, which is kinf of BFS
     # https://www.youtube.com/watch?v=5eIK3zUdYmE&list=PLot-Xpze53ldBT_7QA8NVot219jFNr_GI&index=23
+    def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
+        prices=[float("INF")]*n
+        prices[src]=0
+        
+        for i in range(k+1):
+            tempPrices=prices[:]            
+            for s,d,p in flights:
+                tempPrices[d]=min(tempPrices[d], prices[s]+p)
+            prices=tempPrices[:]
+            print(prices)
+        if prices[dst] == float("INF"):
+            return -1
+        return prices[dst]
    
 
         
