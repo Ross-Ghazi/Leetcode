@@ -25,4 +25,26 @@ class Solution:
                 if dp[r-1][c]==True and s1[r-1]==s3[r+c-1]:             
                     dp[r][c]=True       
         return dp[-1][-1]
+    
+    # or
+    
                                 
+class Solution:
+    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
+        row=len(s1)+1
+        col=len(s2)+1
+        
+        if col+row-2!=len(s3):
+            return False       
+            
+        dp=[[False]*col for _ in range(row)]
+        dp[0][0]=True                  
+                                
+        for r in range(0,row):
+            for c in range(0,col):
+                if c>0 and dp[r][c-1]==True and s2[c-1]==s3[r+c-1]:           
+                    dp[r][c]=True
+                if r>0 and dp[r-1][c]==True and s1[r-1]==s3[r+c-1]:             
+                    dp[r][c]=True       
+        return dp[-1][-1]
+                             
