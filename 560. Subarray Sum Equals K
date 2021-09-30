@@ -1,0 +1,14 @@
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        path=defaultdict(int)
+        path[0]=1
+        currentSum=0
+        res=0
+        for i in range(len(nums)):
+            currentSum+=nums[i]
+            if currentSum-k in path:
+                res+=path[currentSum-k]                 
+            path[currentSum]+=1        
+        return res
+                
+        
