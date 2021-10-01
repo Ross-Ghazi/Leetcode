@@ -1,0 +1,30 @@
+class Solution:
+    def totalFruit(self, fruits: List[int]) -> int:
+        nums=fruits       
+        res=0
+        count_last_two_number=0
+        count_last_series_number=0
+        last_number=nums[0]
+        second_last_number=nums[0]
+        
+        for i,n in enumerate(nums):
+            if n==last_number:
+                count_last_two_number+=1              
+                count_last_series_number+=1
+                res=max(res,count_last_two_number)       
+                continue
+                
+            if n==second_last_number:
+                count_last_two_number+=1 
+                count_last_series_number=1
+                last_number, second_last_number=second_last_number,last_number
+                res=max(res,count_last_two_number)           
+                continue
+                
+            second_last_number=last_number
+            last_number=n
+            count_last_two_number=count_last_series_number+1
+            count_last_series_number=1
+            res=max(res,count_last_two_number)           
+            
+        return res    
