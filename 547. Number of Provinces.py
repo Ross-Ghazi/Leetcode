@@ -1,4 +1,5 @@
 # two methos 1. union and find 2. DFS
+# both have the same time complexity
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         row=len(isConnected)
