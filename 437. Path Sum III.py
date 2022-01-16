@@ -1,7 +1,7 @@
 # I made a vido on that
 # https://www.youtube.com/watch?v=uZzvivFkgtM&ab_channel=CodeAndCoffee
 # https://www.youtube.com/watch?v=HpqPcpP9uVQ&ab_channel=RickyCho
-
+# use same concept as leetcode 560
 
 class Solution:
     def pathSum(self, root: TreeNode, sum: int) -> int:
