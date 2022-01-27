@@ -8,7 +8,9 @@ class Solution:
         start=0
         end=(col*row)-1
         
-        while start<=end:
+        while True:
+            if start>end:
+                return False 
             mid=(start+end)//2
             c=mid%col
             r=mid//col
@@ -21,7 +23,6 @@ class Solution:
                 end=mid-1
             print(r,c,mid)
         return False 
-    
     
 # link: https://github.com/Rouzbeh1797/Leetcode/blob/main/Binary%20Search.py
 # class Solution:
