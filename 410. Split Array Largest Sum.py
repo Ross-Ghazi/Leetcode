@@ -3,6 +3,9 @@ class Solution:
         def Canit(target):
             sumi=0
             number_of_groups=1
+            if (x<max(nums)):
+                    return False  # for example if numsis[1,4,4] Canit(3) is False. we need this stattment epacially if we start 
+                                  # from l=0; but if l=max(nums), we do nto need it.
             for n in nums:
                 sumi+=n
                 if sumi>target:
@@ -13,7 +16,7 @@ class Solution:
             
             return True
         
-        l=max(nums)
+        l=max(nums)  
         r=0
         for n in nums:
             r+=n
