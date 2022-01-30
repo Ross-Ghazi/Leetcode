@@ -26,5 +26,13 @@ class Solution:
 #         for _ in range(k):
 #             a,x,y=heapq.heappop(heap)
 #             res.append([x,y])        
-#         return res    
+#         return res  
+
+    #     or
+    #   k=heapq.nsmallest(k,points)
+    #         res=[]
+    #         for d,x,y in k:
+    #             res.append([x,y])       
+    #         return res
+        
         
