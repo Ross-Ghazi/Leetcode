@@ -39,5 +39,22 @@ class Solution:
             cur2=cur2.next
         return True
         
-        
+#          or        
+#          class Solution:
+#             def isPalindrome(self, head: Optional[ListNode]) -> bool:
+#                 if head==None:
+#                     return True
+#                 cur=head
+#                 q=collections.deque()
+#                 while cur:
+#                     q.append(cur.val)
+#                     cur=cur.next
+
+#                 while len(q)>1:
+#                     x=q.pop()
+#                     y=q.popleft()
+#                     if x!=y:
+#                         return False
+#                 return True 
+
         
