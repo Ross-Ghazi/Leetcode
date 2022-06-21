@@ -1,4 +1,21 @@
-
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        row=len(matrix)
+        col=len(matrix[0])        
+        r=0
+        c=col-1        
+        while True:
+            if r>=row or c<0:
+                return False
+            if target==matrix[r][c]:
+                return True
+            if target>matrix[r][c]:
+                r+=1
+            else:
+                c-=1
+        return False
+###############################################    
+#second method 
 # using binary search
 # change 2D array to 1D
 class Solution:
