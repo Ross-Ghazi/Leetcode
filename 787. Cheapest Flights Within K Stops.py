@@ -8,12 +8,12 @@ class Solution:
             edges[s].append((p,d))
         minHeap=[(0,src,k+1)]
         seen=set()
-        res=0
+        #res=0  we do not need res for this question
         while minHeap:               
             w1,u1,k=heapq.heappop(minHeap)
             if u1 in seen:
                 continue                
-            res=max(res,w1)
+           # res=max(res,w1)
             if u1==dst:
                 return res
             seen.add(u1)
