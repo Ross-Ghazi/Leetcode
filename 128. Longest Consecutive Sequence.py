@@ -1,5 +1,5 @@
 # ref: https://www.youtube.com/watch?v=P6RZZMu_maU&ab_channel=NeetCode
-# on you the for loop is on nums, hower it should be on numsSet to get it faster as there is no duplicat.
+# on youtube file the for loop is on nums, hower it should be on numsSet to get it faster as there is no duplicat.
 
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
