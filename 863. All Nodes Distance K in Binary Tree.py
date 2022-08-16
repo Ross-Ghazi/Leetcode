@@ -1,11 +1,9 @@
-# https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/discuss/143748/Python-Graph-solution-44-ms
-# https://www.youtube.com/watch?v=zWxuGn2nLB8&ab_channel=RickyCho
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+
+# From the structure we can find the childs, to find the parents we create a parent dictionary to keep the parents of each node.
+# now we do BFS to find all nodes with k distance
+# another way: https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/discuss/143748/Python-Graph-solution-44-ms
+# not needed: https://www.youtube.com/watch?v=zWxuGn2nLB8&ab_channel=RickyCho
+
 
 class Solution:
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:      
