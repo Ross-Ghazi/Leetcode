@@ -1,4 +1,5 @@
 # https://www.youtube.com/watch?v=KuE_Cn3xhxI&ab_channel=TECHDOSE
+# Tip: consider this case "***((("
 class Solution:
     def checkValidString(self, s: str) -> bool:
         star=[]
