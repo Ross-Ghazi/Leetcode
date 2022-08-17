@@ -3,24 +3,32 @@
 # https://github.com/RossGhazi/Leetcode/blob/main/743.%20Network%20Delay%20Time.py
 class Solution:
     def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
-        edges=defaultdict(list)
+        adj=defaultdict(list)
         for s,d,p in flights:
-            edges[s].append((p,d))
-        minHeap=[(0,src,k+1)]
-        seen=set()
-        #res=0  we do not need res for this question
-        while minHeap:               
-            w1,u1,k=heapq.heappop(minHeap)
-            if u1 in seen:
+            adj[s].append((d,p))
+        
+        # Heap=[(prcie,stopes, node)]
+        H=[(0,0,src)]
+        seen={}
+        
+        while len(H)>0:
+            price,stopes,node= heapq.heappop(H)
+            
+            if node==dst:
+                return price
+            
+            if stopes>k:
                 continue                
-           # res=max(res,w1)
-            if u1==dst:
-                return res
-            seen.add(u1)
-            if k>0:
-                for w2,u2 in edges[u1]:
-                    if u2 not in seen:
-                        heapq.heappush(minHeap,(w2+w1,u2,k-1))
+            if node in seen and seen[node]<stopes:
+                continue
+            
+            seen[node]=stopes
+            
+            for adjnode,adjcost in adj[node]:
+                heapq.heappush(H,(price+adjcost,stopes+1, adjnode))
+            
+        return -1
+        
                        
                         
                         
