@@ -1,15 +1,24 @@
 class Solution:
     def numTrees(self, n: int) -> int:
-        res=[1]*(n+1)
+        #n(4)=
+        #n(0)*n(3)+
+        #n(1)*n(2)+
+        #n(2)*n(1)+
+        #n(3)*n(0)
         
-        for nodes in range(2,n+1):
-            total=0
-            
-            for cur in range(1,nodes+1):
-                left=cur-1
-                right=nodes-cur
-                total+=res[left]*res[right]
-            res[cur]=total
+        #n(2)=
+        #n(0)+n(1)+
+        #n(1)+n(0)
         
-        return res[-1]
-            
+        dp=[0]*(n+1)
+        dp[0]=1
+        dp[1]=1        
+        if n<2:
+            return 1        
+        for i in range(2,n+1):
+            temp=0
+            for j in range(i):
+                left=j
+                right=i-j-1
+                dp[i]+= dp[left]* dp[right]
+        return dp[-1]
