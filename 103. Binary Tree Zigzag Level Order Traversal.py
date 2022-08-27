@@ -1,3 +1,30 @@
+class Solution:
+    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return root
+        stack=[root]
+        Round=0  
+        res=[]
+        while stack:
+            newStack=[]
+            reslevel=[]
+            for node in stack:
+                reslevel.append(node.val)
+                if node.left:
+                    newStack.append(node.left)
+                if node.right:
+                    newStack.append(node.right)
+            if Round%2:
+                reslevel.reverse()
+            res.append(reslevel)
+            stack=newStack
+            Round+=1
+        return res
+            
+                    
+                    
+
+
 """"
 Dec 6,2020
 
