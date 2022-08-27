@@ -16,7 +16,6 @@ class Solution:
         if n<2:
             return 1        
         for i in range(2,n+1):
-            temp=0
             for j in range(i):
                 left=j
                 right=i-j-1
