@@ -1,16 +1,18 @@
 
 # https://leetcode.com/problems/longest-palindromic-substring/discuss/2954/Python-easy-to-understand-solution-with-comments-(from-middle-to-two-ends).
 class Solution(object):
-    def longestPalindrome(self, s):        
+    def longestPalindrome(self, s):      
+        def helper(s,l,r):        
+            while 0<=l and r < len(s) and s[l]==s[r]:
+                l-=1; r+=1
+            return s[l+1:r]
+    
         res = ""
         for i in range(len(s)):
-            res = max(self.helper(s,i,i), self.helper(s,i,i+1), res, key=len)
+            res = max(helper(s,i,i), helper(s,i,i+1), res, key=len)
         return res      
         
-    def helper(self,s,l,r):        
-        while 0<=l and r < len(s) and s[l]==s[r]:
-                l-=1; r+=1
-        return s[l+1:r]
+
             
 #######################################################
 #above method is easier.
