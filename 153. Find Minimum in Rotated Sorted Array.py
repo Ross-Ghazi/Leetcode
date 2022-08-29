@@ -7,5 +7,5 @@ class Solution:
                 l=mid+1    #we know min is on right side              
             else:
                 r=mid  #we know min is on or on left side 
-        return nums[l]
+        return nums[l]  # both nums[l] and nums[r]  are correct
             
