@@ -7,7 +7,7 @@ class Solution:
         maxLeft=height[l]
         maxRight=height[r]
         while l<=r:            
-            if maxLeft<maxRight:                
+            if maxLeft<maxRight:    #  maxLeft<=maxRight works as well since area is calclauted before maxLeft,maxRight
                 area=maxLeft-height[l]
                 ans+=area
                 l+=1
@@ -19,4 +19,5 @@ class Solution:
                 r-=1
                 maxRight=max(maxRight,height[r])                             
         return ans
+            
             
