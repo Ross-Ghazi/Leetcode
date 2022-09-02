@@ -1,7 +1,6 @@
 class Solution:
      def orangesRotting(self, grid: List[List[int]]) -> int:
-            que=collections.deque()
-            rotten=set()
+            que=collections.deque()            
             fresh=0
             row=len(grid)
             col=len(grid[0])
