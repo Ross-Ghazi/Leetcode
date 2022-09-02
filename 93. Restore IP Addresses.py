@@ -9,7 +9,7 @@ class Solution:
             if dotsofar==4 and not s:
                 res.append(sofar[:-1])
                 return                   
-            for i in range(1,len(s)+1):
+            for i in range(1,min(len(s)+1,4)):
                 s1=s[:i]
                 s2=s[i:]                
                 if s1=="0" or (0<int(s1)<=255 and s1[0]!="0"):
