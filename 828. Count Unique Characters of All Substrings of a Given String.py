@@ -1,17 +1,17 @@
 class Solution:
     def uniqueLetterString(self, s: str) -> int:
+        dic={}
+        for i,c in enumerate(s):
+            if c in dic:               
+                dic[c].append(i)       
+            else:
+                dic[c]=[-1,i]    #will add -1 and len(s) to the dic
         res=0
-        dic=defaultdict(list)
-        for  i, c in enumerate(s):
-                dic[c].append(i)        
-                        
-        for arr in dic.values():
-            for i,index in enumerate(arr):
-                left=0 if i==0 else arr[i-1]+1
-                right=len(s)-1 if i==len(arr)-1 else arr[i+1]-1                
-                res+=(index-left+1)*(right+1-index)
-        return res        
-      
-            
-                    
-                        
+        for item in dic.values():
+            item.append(len(s))
+            for i in range(1,len(item)-1):
+                left=item[i]-item[i-1]
+                right=item[i+1]-item[i]
+                res+=left*right
+        return res
+    
