@@ -73,7 +73,7 @@ class Solution:
                 tmp = helper(candidates[:i+1], target - candidates[i])
                 res += [lst+[candidates[i]] for lst in tmp]               
             return res
-        
+        # test reults: sorting make it faster
         candidates = sorted(candidates)
         return helper(candidates, target)
 
@@ -96,6 +96,8 @@ class Solution:
             return res
         
         dic = {}
+        
+        # test reults: sorting make it faster
         candidates = sorted(candidates)
         return helper(candidates, target,0)    
 
