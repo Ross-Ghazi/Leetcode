@@ -13,8 +13,7 @@ import time
 # https://www.youtube.com/watch?v=GBKI9VSKdGg&t=606s 
 
 class Solution: 
-    def combinationSum(self, candidates, target):
-        global  maxTarget
+    def combinationSum(self, candidates, target):         
         res=[]       
         def dfs(remaning,path,currenSum):           
             if currenSum==target:
