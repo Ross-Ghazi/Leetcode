@@ -36,7 +36,30 @@ class Solution:
             
             
             
-            
+#            or 
+#          layer=[target]
+#         seen.add(target)      
+#         for i in range(k):
+#             newlayer=[]
+#             for item in layer:
+#                 left=item.left
+#                 right=item.right
+#                 p=None
+#                 if item in parent:
+#                     p=parent[item]                  
+#                 if left and left not in seen:
+#                     newlayer.append(left)
+#                     seen.add(left)
+#                 if right and right not in seen:
+#                     newlayer.append(right)
+#                     seen.add(right)
+#                 if p and p not in seen:
+#                     newlayer.append(p)
+#                     seen.add(p)
+#             layer=newlayer
+#         res=[]
+#         for node in layer:
+#             res.append(node.val)
         
             
                 
