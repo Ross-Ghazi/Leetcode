@@ -18,6 +18,8 @@ class Solution:
                     dp[r][c]=True
                     
         return dp[0][0]
+    
+    
 # using table, start from top, indexed need to have -1    
 class Solution2:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
