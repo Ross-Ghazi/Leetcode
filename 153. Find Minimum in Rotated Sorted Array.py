@@ -1,11 +1,15 @@
+# my own video
+#https://www.youtube.com/watch?v=q7ZNEcYpwek
 class Solution:
-    def findMin(self, nums: List[int]) -> int:
-        l, r = 0, len(nums)-1
-        while (l<r): # if l<=r non end loop
-            mid=(r+l)//2                    
-            if nums[mid]>=nums[r]:# > or >= both work
-                l=mid+1    #we know min is on right side              
+    def findMin(self, nums: List[int]) -> int:        
+        l=0
+        r=len(nums)-1
+        mid=0
+        while l<r:  # cannot be <= becasue if r=mid it will be infinite loop         
+            mid=(l+r)//2
+            if nums[mid]>nums[r]: # > or >= both work
+                l=mid+1              
             else:
-                r=mid  #we know min is on or on left side 
-        return nums[l]  # both nums[l] and nums[r]  are correct
-            
+                r=mid            
+        return min(nums[mid],nums[r],nums[l]) # or nums[l] or nums[r] 
+    
