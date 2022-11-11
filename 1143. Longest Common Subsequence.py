@@ -1,3 +1,24 @@
+#bottom-up
+# simiar to question 97
+class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        s1=text1
+        s2=text2
+        col=len(s1)+1
+        row=len(s2)+1
+        dp=[[0]*(col+1) for _ in range(row)]
+        
+        for r in range(row-2,-1,-1):
+            for c in range(col-2,-1,-1):
+                if s1[c]==s2[r]:
+                    dp[r][c]=dp[r+1][c+1]+1
+                else:
+                    dp[r][c]=max(dp[r+1][c],dp[r][c+1])               
+        return dp[0][0]
+ 
+
+#--------------ignore below----------------------------#
+
 # 1143. Longest Common Subsequence
 # two methods: recursive (for some reason slow even when I use lru_cache
 # second method is buttom up and dynamic programming table
