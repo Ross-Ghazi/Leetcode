@@ -8,8 +8,8 @@ class Solution:
         row=len(s2)+1
         dp=[[0]*(col) for _ in range(row)]
         
-        for r in range(row-2,-1,-1):
-            for c in range(col-2,-1,-1):
+        for r in range(row-2,-1,-1):# row-2=len(s2)-1
+            for c in range(col-2,-1,-1): # col-2=len(s1)-1
                 print(r,c)
                 if s1[c]==s2[r]:
                     dp[r][c]=dp[r+1][c+1]+1
