@@ -6,16 +6,18 @@ class Solution:
         s2=text2
         col=len(s1)+1
         row=len(s2)+1
-        dp=[[0]*(col+1) for _ in range(row)]
+        dp=[[0]*(col) for _ in range(row)]
         
         for r in range(row-2,-1,-1):
             for c in range(col-2,-1,-1):
+                print(r,c)
                 if s1[c]==s2[r]:
                     dp[r][c]=dp[r+1][c+1]+1
                 else:
-                    dp[r][c]=max(dp[r+1][c],dp[r][c+1])               
+                    dp[r][c]=max(dp[r+1][c],dp[r][c+1])                      
         return dp[0][0]
- 
+    
+        
 
 #--------------ignore below----------------------------#
 
