@@ -1,3 +1,7 @@
+# reference:
+# my own video
+# https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/14435/clever-idea-making-it-simple/comments/187360
+# https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/154836/the-inf-and-inf-method-but-with-a-better-explanation-for-dummies-like-me/
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         l, r = 0, len(nums)-1
