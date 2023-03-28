@@ -1,6 +1,8 @@
 class Solution {
 public:
-    string check(int start, int end,string s){
+
+    
+    string check(int start, int end,const string &s){
         while (start>=0 && end<=s.size()-1 && s[start]==s[end]){
             start--;
             end++;
