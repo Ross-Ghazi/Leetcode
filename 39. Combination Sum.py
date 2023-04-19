@@ -1,4 +1,4 @@
-# my owb video
+# my own video
 class Solution: 
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:  
             def backtracking(cur,target):                              
