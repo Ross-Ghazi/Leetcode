@@ -1,3 +1,30 @@
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        dic={}
+        #a:0-9
+
+        for i,c in enumerate(s):
+            if c in dic:
+                dic[c][1]=i
+            else:
+                dic[c]=[i,i]
+        resArr=[[0,0]]
+
+        for start,end in dic.values():
+            if start>resArr[-1][-1]:
+                resArr.append([start,end])
+            else:
+                resArr[-1][-1]=max(resArr[-1][-1],end)
+        res=[]
+        for start,end in resArr:
+            res.append(end-start+1)
+        return res
+
+
+
+##################################
+
+
 #No refernce
     #look at example 1:  ababcbacadefegdehijhklij
         # ababcbaca   defegde          hijhklij
