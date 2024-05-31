@@ -1,6 +1,25 @@
 # my own video
 class Solution: 
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:  
+
+        def combinationSum_withDic(self, candidates: List[int], target: int) -> List[List[int]]:  
+            def backtracking(cur,target):                              
+                if target<=0: # since threre is no zero,  < wil also work
+                    return []   
+             
+                for i in  range(cur, len(candidates)):
+                    if candidates[i] > target:
+                        continue
+                    if candidates[i]==target:
+                        res.append([target])
+                    temp=backtracking(i,target-candidates[i])
+                    res+=[item+[candidates[i]] for item in temp]
+                  
+                return res                     
+    
+            return backtracking(0,target)
+
+
+    def combinationSum_withDic(self, candidates: List[int], target: int) -> List[List[int]]:  
             def backtracking(cur,target):                              
                 if target<=0: # since threre is no zero,  < wil also work
                     return []   
