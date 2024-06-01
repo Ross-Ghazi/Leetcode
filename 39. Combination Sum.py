@@ -1,4 +1,4 @@
-# This is interesting question with many ways to solve
+# This is interesting question with many ways to solve.
 # method 2 (combinationSum_forLoop_withDic)  and 4 (combinationSum_recursive_withDic) are the fastest
 # to understand them you need to learn 1 combinationSum_forLoop and 3 combinationSum_recursive 
 class Solution: 
