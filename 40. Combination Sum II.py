@@ -1,11 +1,12 @@
-# my onw video
+# https://www.youtube.com/watch?v=utBw5FbYswk&ab_channel=GregHogg
+# also look at 39
 class Solution:
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:       
+    def combinationSum2 (self, candidates , target) :       
         #Reverse Sorting will help here : We hit the cases where the target is exceeded first. Thus, prune helps here
         candidates.sort(reverse=True)
         dic={}
         def backtracking(cur,target):                          
-                if target<=0: # since threre is no zero,  < wil also work
+                if target<=0: # since there is no zero,  < wil also work
                     return []
                 if (cur,target) in dic:
                     return dic[(cur,target)]

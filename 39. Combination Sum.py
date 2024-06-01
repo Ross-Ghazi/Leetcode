@@ -1,9 +1,12 @@
-# my own video
+# This is interesting question with many ways to solve
+# method 2 (combinationSum_forLoop_withDic)  and 4 (combinationSum_recursive_withDic) are the fastest
+# to understand them you need to learn 1 combinationSum_forLoop and 3 combinationSum_recursive 
 class Solution: 
-
-        def combinationSum_withDic(self, candidates: List[int], target: int) -> List[List[int]]:  
+        #method 1: for loop basic
+        # see: https://youtu.be/qJ_Hd4uVk_w
+        def combinationSum_forLoop(self, candidates, target):
             def backtracking(cur,target):                              
-                if target<=0: # since threre is no zero,  < wil also work
+                if target<=0: # since there is no zero,  < wil also work
                     return []   
              
                 for i in  range(cur, len(candidates)):
@@ -17,11 +20,10 @@ class Solution:
                 return res                     
     
             return backtracking(0,target)
-
-
-    def combinationSum_withDic(self, candidates: List[int], target: int) -> List[List[int]]:  
+        #method 2: for loop with memoization
+        def combinationSum_forLoop_withDic(self, candidates, target):
             def backtracking(cur,target):                              
-                if target<=0: # since threre is no zero,  < wil also work
+                if target<=0: # since there is no zero,  < wil also work
                     return []   
                 if (cur,target) in dic:
                     return dic[(cur,target)]
@@ -39,22 +41,74 @@ class Solution:
             #Reverse Sorting will help here : We hit the cases where the target is exceeded first. Thus, prune helps here
             candidates.sort(reverse=True)
             return backtracking(0,target)
+   
+        #method 3: combinationSum_recursive, this is based on method 1 created by chatGPT
+        # refer to https://www.youtube.com/watch?v=utBw5FbYswk&ab_channel=GregHogg
+        # and to https://www.youtube.com/watch?v=GBKI9VSKdGg&ab_channel=NeetCode        
+        def combinationSum_recursive(self, candidates, target):
+            def backtracking(cur, target):
+                if target == 0:
+                    # You can think of the condition if target == 0: return [[]] in the same way as the condition 
+                    # if candidates[i] == target: res.append([target]) in your combinationSum_forLoop code.
+                    # Both are handling the situation where a valid combination that sums to the target has been found. 
+                    # indicating that the current path of recursion has formed a valid combination.
+                    # for [[]]  [item+[candidates[cur]] means  [[candidates[cur]]
+                    # but for [] [item+[candidates[cur]]  for item in include]  means []
+                    return [[]]
+                if target < 0 or cur == len(candidates):
+                    return []
                 
+                # Include the current candidate
+                include = backtracking(cur, target - candidates[cur])
+                include = [item+[candidates[cur]]  for item in include]
                 
+                # Exclude the current candidate and move to the next
+                exclude = backtracking(cur + 1, target)
+                
+                return include + exclude
+        
+            return backtracking(0, target)
+        
+        #method 4: combinationSum_recursive with memoization
+        def combinationSum_recursive_withDic(self, candidates, target):
+            def backtracking(cur, target):
+                if target == 0:
+                    return [[]]
+                if target < 0 or cur == len(candidates):
+                    return []
+                if (cur, target) in dic:
+                    return dic[(cur, target)]
+
+                # Include the current candidate
+                include = backtracking(cur, target - candidates[cur])
+                include = [item+[candidates[cur]]  for item in include]
+
+                # Exclude the current candidate and move to the next
+                exclude = backtracking(cur + 1, target)
+
+                result = include + exclude
+                dic[(cur, target)] = result
+                return result
+
+            dic = {}
+            candidates.sort(reverse=True)  # Optional: Reverse sorting can help with pruning
+            return backtracking(0, target)
+
+
 ################################ Analysis
-#above solution combinationSum_Recursion_memoization is best solution. It is based on:
-#https://leetcode.com/problems/combination-sum/discuss/170940/python-solution 
+#above solutions  combinationSum_Recursion_memoization are  best solution. It is based on:
+# https://leetcode.com/problems/combination-sum/discuss/170940/python-solution 
 # https://www.youtube.com/watch?v=3bH3yGZLzF4&t=2s
 
 
-
+# below is for comparison you do not need to read them 
 # 39. Combination Sum
 # 6 solutions are compared. But combinationSum_Recursion_memoization is best and it should be used.
 
 # combinationSum_path and combinationSum_index based  is backtracking: word case time complexity: 2^m (t^ target)
 # combinationSum_index is a little bit better than combinationSum
 # combinationSum_DP  is dynamic programming, which is faster :m*m*n
-# best soloution is  combinationSum_Recursion_memoization
+# best solution is  combinationSum_Recursion_memoization
 
 #ref:
 # https://leetcode.com/problems/combination-sum/discuss/937255/Python-3-or-DFSBacktracking-and-Two-DP-methods-or-Explanations
