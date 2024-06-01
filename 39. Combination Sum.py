@@ -42,7 +42,7 @@ class Solution:
             candidates.sort(reverse=True)
             return backtracking(0,target)
    
-        #method 3: combinationSum_recursive, this is based on method 1 created by chatGPT
+        #method 3: combinationSum_recursive, this is based on method 1 with no direct reference
         # refer to https://www.youtube.com/watch?v=utBw5FbYswk&ab_channel=GregHogg
         # and to https://www.youtube.com/watch?v=GBKI9VSKdGg&ab_channel=NeetCode        
         def combinationSum_recursive(self, candidates, target):
