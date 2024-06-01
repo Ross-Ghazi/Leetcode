@@ -12,6 +12,7 @@ class Solution:
         return res
         
         # method 2
+        # faster, no nooed for memoization 
             res=[]
             subset=[]
             def dfs(i):
