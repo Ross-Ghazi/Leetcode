@@ -5,7 +5,7 @@ class Solution:
                 return None            
             root=TreeNode(postorder[-1])
             index=inorder.index(postorder[-1])
-            root.left =helper(inorder[:index],postorder[:index])
+            root.left =helper(inorder[:index],postorder[:index]) # notice that inorder lenght should be same as postorder
             root.right=helper(inorder[index+1:],postorder[index:-1])
             return root
         return helper(inorder,postorder)
