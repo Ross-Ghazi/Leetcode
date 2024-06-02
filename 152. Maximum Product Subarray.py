@@ -12,3 +12,18 @@ class Solution:
             
         return max(dp1)
         
+# saving memory but no using array.
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        maxSub=nums[0]
+        minSub=nums[0]
+        res=nums[0]     
+        for i in range(1,len(nums)):
+            temp=maxSub #to save not updated maxSub
+            maxSub=max(nums[i],maxSub*nums[i],minSub*nums[i])
+            minSub=min(nums[i],temp*nums[i],minSub*nums[i])  #need to times by previous value of minSub
+            res=max(res,maxSub)           
+        return res
+
+
+
