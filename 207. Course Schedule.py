@@ -6,7 +6,7 @@ class Solution:
         cycle=set()
         seen=set()
         def check(course):
-            if course in seen:
+            if course in seen: # does not matter which once is first "if course in seen" or " if course in cycle"
                 return True
             if course in cycle:
                 return False
