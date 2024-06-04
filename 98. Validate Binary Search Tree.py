@@ -1,18 +1,12 @@
 #https://www.youtube.com/watch?v=s6ATEkipzow&ab_channel=NeetCode
 class Solution:
-    def isValidBST(self, root: TreeNode) -> bool:
-        if root == None:
-            return False
-        def dfs(node,min,max):
-            if node==None:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        def return(root,maxAllowed,minAllowed):
+            if not root:
                 return True
-            if node.val<=min:
-                return False 
-            if node.val>=max:
+            if root.val>=maxAllowed or root.val<=minAllowed:
                 return False
-            return dfs(node.left,min,node.val) and dfs(node.right,node.val,max)
-        
-            
-            
-        
-        return dfs(root,-float("INF"),float("INF") )
+
+            return return(root.left ,root.val,minAllowed) and return(root.right ,maxAllowed,root.val)
+
+        return return(root,float("inf"),-float("inf"))
