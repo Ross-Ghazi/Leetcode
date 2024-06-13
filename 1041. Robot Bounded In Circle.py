@@ -1,7 +1,7 @@
 class Solution:
     def isRobotBounded(self, instructions: str) -> bool:
         s=instructions+instructions+instructions+instructions        
-        ins=[0]*4                
+        ins=[0]*4    #index[0]=north, index[1]=west, etc ..
         index=0
         for c in s:
             if c=="G":                
