@@ -13,9 +13,11 @@ class Solution:
                 index-=4
             elif index<0:
                 index+=4
+        # it is flase only if we moved and we have the inital direction
         if (movement[0]!=movement[2] or movement[1]!=movement[3]) and index==0:
             return False
         return True
+        
         
         
 
