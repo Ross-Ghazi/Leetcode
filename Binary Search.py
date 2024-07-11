@@ -30,6 +30,19 @@ def IBinSearch(l,r):
             l=mid+1
 
 
+def binary_search(arr, x):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+
 A=[0,1,2,3,4,5,6,7,8]
 target=5.5
 print(RBinSearch(0,len(A)-1))
