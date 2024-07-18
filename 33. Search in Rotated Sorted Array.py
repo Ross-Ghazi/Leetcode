@@ -8,7 +8,7 @@ class Solution:
             if l>r:
                 return -1   
             m = (l + r) // 2   
-            if (nums[m] < nums[0]) == (target < nums[0]): # both num[mid] and target are on trhj
+            if (nums[m] < nums[0]) == (target < nums[0]): # both num[mid] and target are on the same side 
                 num = nums[m]
             else:
                 if target < nums[0]: # target is on right side 
