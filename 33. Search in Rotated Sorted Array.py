@@ -1,3 +1,43 @@
+# refrence 1:  look at solution for 704. Binary Search
+# https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/14435/clever-idea-making-it-simple
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
+        while True:
+            if l>r:
+                return -1   
+            m = (l + r) // 2   
+            if (nums[m] < nums[0]) == (target < nums[0]): # both num[mid] and target are on trhj
+                num = nums[m]
+            else:
+                if target < nums[0]: # target is on right side 
+                    num = float('-inf')
+                else:  # target is on left side 
+                    num = float('inf')
+
+            if num == target:
+                return m
+            elif num < target:
+                l = m + 1                 
+            else:
+                r = m - 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # reference:
 # my own video
 # https://leetcode.com/problems/search-in-rotated-sorted-array/solutions/14435/clever-idea-making-it-simple/comments/187360
