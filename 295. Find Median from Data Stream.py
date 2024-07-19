@@ -5,15 +5,17 @@ class MedianFinder:
         """
         initialize your data structure here.
         """
-        self.heapmin=[float("INF")]
-        self.heapmax=[float("INF")]
+        self.small=[] # max heap
+        self.large=[] # min heap
     def addNum(self, num: int) -> None:
-        if num<=self.heapmin[0]:
-            heapq.heappush(self.heapmax,-1*num)         
+        small=self.small
+        large=self.large
+        if num<=large[0]:
+            heapq.heappush(small,-1*num)         
         else:
-            heapq.heappush(self.heapmin,num)   
+            heapq.heappush(large,num)   
         
-        if len(self.heapmax)-len(self.heapmin)>1:
+        if len(small)-len(self.heapmin)>1:
             temp=-1*heapq.heappop(self.heapmax)
             heapq.heappush(self.heapmin,temp)                
         elif len(self.heapmin)-len(self.heapmax)>1:
